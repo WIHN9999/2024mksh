@@ -3,22 +3,16 @@ import cv2
 
 img = cv2.imread("RGB.jpg")
 img = cv2.resize(img, (256,256))
+cv2.imshow("RGB", img)
 
-cv2.imshow('RGB', img)
+img1 = cv2.applyColorMap(img,cv2.COLORMAP_HSV)
+img2 = cv2.applyColorMap(img,cv2.COLORMAP_PINK)
+img3 = cv2.applyColorMap(img,cv2.COLORMAP_JET)
 
-b = img[:,:,0]
-g = img[:,:,1]
-r = img[:,:,2]
-
-rrr = cv2.merge([r,r,r])
-cv2.imshow("RRR",rrr)
-
-ggg = cv2.Smerge([r,r,r])
-cv2.imshow("ggg",ggg)
-
-bbb = cv2.merge([b,b,b])
-cv2.imshow("BBB",bbb)
+cv2.imshow("img1",img1)
+cv2.imshow("img2",img2)
+cv2.imshow("img3",img3)
 
 cv2.waitKey(0)
-cv2.destroyAllWindows()
 
+cv2.destroyAllWindows()
